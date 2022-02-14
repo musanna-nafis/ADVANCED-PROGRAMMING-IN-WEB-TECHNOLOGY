@@ -19,6 +19,11 @@ class productcontroller extends Controller
         $m="";
         return view('createproduct')->with('m',$m);
     }
+    public function productdetails(Request $r)
+    {
+        $list=product::where('id',decrypt($r->id))->first();
+        return view('productdetails')->with('list',$list);
+    }
     public function deleteproduct()
     {
         $m="";

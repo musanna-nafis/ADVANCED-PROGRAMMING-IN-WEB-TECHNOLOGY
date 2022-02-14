@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/product/view',[productcontroller::class,'product'])->name('product');
+Route::get('/product/details/{id}',[productcontroller::class,'productdetails'])->name('productdetails');
 Route::get('/product/create',[productcontroller::class,'createproduct'])->name('createproduct');
 Route::get('/product/delete',[productcontroller::class,'deleteproduct'])->name('deleteproduct');
 Route::get('/product/update',[productcontroller::class,'updateproduct'])->name('updateproduct');
