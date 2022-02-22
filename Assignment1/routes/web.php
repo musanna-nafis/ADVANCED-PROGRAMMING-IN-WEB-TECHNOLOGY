@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\customercontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,11 @@ Route::get('/product/update',[productcontroller::class,'updateproduct'])->name('
 Route::post('/product/create',[productcontroller::class,'createsubmit'])->name('create.submit');
 Route::post('/product/delete',[productcontroller::class,'deletesubmit'])->name('delete.submit');
 Route::post('/product/update',[productcontroller::class,'updatesubmit'])->name('update.submit');
+
+Route::get('/login',[customercontroller::class,'login'])->name('login');
+Route::post('/login',[customercontroller::class,'loginsubmit'])->name('login.submit');
+Route::get('/customer/order',[customercontroller::class,'order'])->name('customer.order');
+Route::post('/customer/order',[customercontroller::class,'AddToChart'])->name('order.submit');
+Route::get('/logout',[customercontroller::class,'logout'])->name('logout');
+
+
